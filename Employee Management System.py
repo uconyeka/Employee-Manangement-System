@@ -69,10 +69,7 @@ Emp_Chi = Employee('Chi', 'Onyekachi', '2022-02-19', 60000, 'Accounting')
 
 list_of_emps = [Emp_Ugonna, Emp_Chi]
 
-# for emp in list_of_emps:
-#     print(emp.get_fname())
-#     print(emp.get_employeeid())
-#
+
 # print('-------------------------------------------------------------------------')
 # print([(emp.get_employeeid(), emp.get_fname()) for emp in list_of_emps])
 #
@@ -169,3 +166,20 @@ elif option.strip().upper() == 'U':
             break
     else:
         print(f"Employee with ID = {emp_id} does not exist!!")
+
+elif option.strip().upper() == 'D':
+    emp_id = input("What is the employee ID of the Employee you want to remove their information? ")
+
+
+    for emp in list_of_emps:
+        if int(emp_id) == emp.get_employeeid():
+            list_of_emps.remove(emp)
+            print("Employee removed")
+            break
+
+    else:
+                print("ID doesn't exist")
+
+
+
+
